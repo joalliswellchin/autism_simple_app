@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'components/home.dart';
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({super.key});
+class HomeWidget extends StatefulWidget {
+  const HomeWidget({super.key});
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<HomeWidget> createState() => _HomeState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _HomeState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
@@ -27,7 +27,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           const SizedBox(height: 30),
           ElevatedButton(
             style: style,
-            onPressed: () => proMode(context),
+            onPressed: null,
+            // onPressed: () => proMode(context),
             child: const Text('Pro mode'),
           ),
         ],

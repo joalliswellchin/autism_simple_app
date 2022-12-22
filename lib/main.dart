@@ -5,3 +5,7 @@ import 'stack.dart';
 void main() {
   runApp(const AppStack());
 }
+
+// TODO: function below
+/// add images to cache on start of application
+void preloadImages() {}
