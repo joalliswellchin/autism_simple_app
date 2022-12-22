@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:autism_simple_app/common/common.dart';
 
-class ProMode extends StatelessWidget {
-  const ProMode({super.key});
+//TODO: add password checks, list of all images and labels,
+// and ability to upload (temporarily store in local, future store in cloud)
+class AdminPage extends StatelessWidget {
+  const AdminPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: create grid here, might need use stateful
     return Scaffold(
       body: Center(child: back(context)),
     );

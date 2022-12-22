@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/simple_data.dart';
+import 'package:autism_simple_app/common/simple_data.dart';
 
 class SimpleMode extends StatelessWidget {
   const SimpleMode({super.key});

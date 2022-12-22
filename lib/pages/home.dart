@@ -31,6 +31,13 @@ class _HomeState extends State<HomeWidget> {
             // onPressed: () => proMode(context),
             child: const Text('Pro mode'),
           ),
+          const SizedBox(height: 30),
+          ElevatedButton(
+            style: style,
+            onPressed: null,
+            // onPressed: () => adminPage(context),
+            child: const Text('Admin'),
+          ),
         ],
       ),
     );

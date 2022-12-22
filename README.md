@@ -2,6 +2,10 @@
 
 A Flutter project for teachers educating students in autistic spectrum
 
+# Check out the wiki
+Wiki is used to show what the app does and give readers a look and feel
+Documentation here will be about how to run and dependencies of the application
+
 ## Getting Started
 
 1. Download the repository by cloning or downloading the binaries
