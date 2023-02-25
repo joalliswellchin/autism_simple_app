@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-// TODO: get images from cache
+// TODO: get images from cloud if website
+//       and get images from assets if mobile
+// https://stackoverflow.com/questions/50521274/how-to-get-a-list-of-files-from-the-directory-and-pass-it-to-the-listview
 List<Widget> imageData() {
   return [
     Container(
