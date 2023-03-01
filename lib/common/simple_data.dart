@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-// TODO: get images from cloud if website
-//       and get images from internal memory if mobile
+// TODO: get images from cloud if website and get images from internal memory if mobile
 // https://stackoverflow.com/questions/50521274/how-to-get-a-list-of-files-from-the-directory-and-pass-it-to-the-listview
+// https://stackoverflow.com/questions/45924474/how-do-you-detect-the-host-platform-from-dart-code
 // TODO: change assets to mobile internal storage, as assets folder is read-only
 List<Widget> imageData() {
   return [

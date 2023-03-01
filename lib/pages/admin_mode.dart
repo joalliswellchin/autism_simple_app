@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:autism_simple_app/common/common.dart';
 import 'package:autism_simple_app/pages/pages_routing/display_photo.dart';
 
-//TODO: add password checks, list of all images and labels,
-// and ability to upload (temporarily store in local, future store in cloud)
+// TODO: add password checks(?)
+// TODO: do importing and exporting
 class AdminPage extends StatelessWidget {
   const AdminPage({super.key});
 

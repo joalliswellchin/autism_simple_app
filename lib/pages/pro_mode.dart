@@ -1,40 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'dart:io';
-// import 'package:simple_permissions/simple_permissions.dart'; // TODO: do importing
 import 'package:path_provider/path_provider.dart';
 
 import 'package:autism_simple_app/common/common.dart';
 import 'package:autism_simple_app/pages/pages_routing/pro_mode.dart';
 
 /* 
-TODO: The workflow here will be
+The workflow here:
 1. take photo with camera
-2. generate images with filter
+2. generate images with filter and rename files with name: name_emotion.jpg
 3. create a grid with the images that have filtered
 here are some helpful links:
-camera: https://pub.dev/packages/camera
 face mesh detection with image input https://pub.dev/packages/google_mlkit_face_detection
-carousel: https://docs.flutter.dev/cookbook/effects/photo-filter-carousel
 */
-
-
-
-// class ProMode extends StatelessWidget {
-//   const ProMode({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: TitledAppBar(
-//         title_name: "Pro Mode"
-//       ),
-//       body: Center(
-//         child: Text("hello")
-//       ),
-//     );
-//   }
-// }
 
 class ProMode extends StatefulWidget {
   const ProMode({
@@ -48,7 +27,10 @@ class ProMode extends StatefulWidget {
   State<ProMode> createState() => _ProModeState();
 }
 
+// TODO: generate images with filter and rename files with name: name_emotion.jpg
+// then allow grouping to be viewed in admin mode via name_emotion.jpg
 class _ProModeState extends State<ProMode> {
+  // for more info about camera: https://pub.dev/packages/camera
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
 
