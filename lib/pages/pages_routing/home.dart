@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
 import 'package:autism_simple_app/pages/admin_mode.dart';
 import 'package:autism_simple_app/pages/simple_mode.dart';
 import 'package:autism_simple_app/pages/pro_mode.dart';
-import 'package:flutter/material.dart';
 
 /// Navigation
 void simpleMode(context) {

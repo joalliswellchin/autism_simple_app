@@ -30,3 +30,7 @@ class TitledAppBar extends StatelessWidget implements PreferredSizeWidget{
     @override
     Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
+
+ButtonStyle buttonStyle(){
+  return ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+}

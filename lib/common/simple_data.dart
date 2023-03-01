@@ -3,8 +3,9 @@
 import 'package:flutter/material.dart';
 
 // TODO: get images from cloud if website
-//       and get images from assets if mobile
+//       and get images from internal memory if mobile
 // https://stackoverflow.com/questions/50521274/how-to-get-a-list-of-files-from-the-directory-and-pass-it-to-the-listview
+// TODO: change assets to mobile internal storage, as assets folder is read-only
 List<Widget> imageData() {
   return [
     Container(
@@ -13,7 +14,7 @@ List<Widget> imageData() {
         children: const <Widget>[
           Expanded(
             child: Image(
-              image: AssetImage('assets/images/smile.png'),
+              image: AssetImage('assets/images/simple/smile.png'),
             ),
           ),
           Text("Happy")
@@ -26,7 +27,7 @@ List<Widget> imageData() {
         children: const <Widget>[
           Expanded(
             child: Image(
-              image: AssetImage('assets/images/frown.png'),
+              image: AssetImage('assets/images/simple/frown.png'),
             ),
           ),
           Text("Sad")
@@ -39,7 +40,7 @@ List<Widget> imageData() {
         children: const <Widget>[
           Expanded(
             child: Image(
-              image: AssetImage('assets/images/surprised.png'),
+              image: AssetImage('assets/images/simple/surprised.png'),
             ),
           ),
           Text("Surprised")
@@ -52,7 +53,7 @@ List<Widget> imageData() {
         children: const <Widget>[
           Expanded(
             child: Image(
-              image: AssetImage('assets/images/cry.png'),
+              image: AssetImage('assets/images/simple/cry.png'),
             ),
           ),
           Text("Very Sad")

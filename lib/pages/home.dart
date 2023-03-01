@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'components/home.dart';
+import 'pages_routing/home.dart';
+import 'package:autism_simple_app/common/common.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -12,29 +13,26 @@ class HomeWidget extends StatefulWidget {
 class _HomeState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
 
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ElevatedButton(
-            style: style,
+            style: buttonStyle(),
             onPressed: () => simpleMode(context),
             child: const Text('Simple mode'),
           ),
           const SizedBox(height: 30),
           ElevatedButton(
-            style: style,
+            style: buttonStyle(),
             onPressed: () => proMode(context),
             child: const Text('Pro mode'),
           ),
           const SizedBox(height: 30),
           ElevatedButton(
-            style: style,
-            onPressed: null,
-            // onPressed: () => adminPage(context),
+            style: buttonStyle(),
+            onPressed: () => adminPage(context),
             child: const Text('Admin'),
           ),
         ],

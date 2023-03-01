@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'dart:io';
+// import 'package:simple_permissions/simple_permissions.dart'; // TODO: do importing
+import 'package:path_provider/path_provider.dart';
 
 import 'package:autism_simple_app/common/common.dart';
+import 'package:autism_simple_app/pages/pages_routing/pro_mode.dart';
 
 /* 
 TODO: The workflow here will be
@@ -78,17 +81,21 @@ class _ProModeState extends State<ProMode> {
       // You must wait until the controller is initialized before displaying the
       // camera preview. Use a FutureBuilder to display a loading spinner until the
       // controller has finished initializing.
-      body: FutureBuilder<void>(
-        future: _initializeControllerFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            // If the Future is complete, display the preview.
-            return CameraPreview(_controller);
-          } else {
-            // Otherwise, display a loading indicator.
-            return const Center(child: CircularProgressIndicator());
-          }
-        },
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(10),
+        child: FutureBuilder<void>(
+          future: _initializeControllerFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              // If the Future is complete, display the preview.
+              return CameraPreview(_controller);
+            } else {
+              // Otherwise, display a loading indicator.
+              return const Center(child: CircularProgressIndicator());
+            }
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         // Provide an onPressed callback.
@@ -105,16 +112,12 @@ class _ProModeState extends State<ProMode> {
 
             if (!mounted) return;
 
-            // If the picture was taken, display it on a new screen.
-            await Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => DisplayPictureScreen(
-                  // Pass the automatically generated path to
-                  // the DisplayPictureScreen widget.
-                  imagePath: image.path,
-                ),
-              ),
-            );
+            // save image to local
+            print(image.path);
+            File img = File(image.path); // /data/user/0/com.example.autism_simple_app/cache/
+
+            // display it on a new screen
+            displayImage(context, image.path);
           } catch (e) {
             // If an error occurs, log the error to the console.
             print(e);
@@ -122,23 +125,6 @@ class _ProModeState extends State<ProMode> {
         },
         child: const Icon(Icons.camera_alt),
       ),
-    );
-  }
-}
-
-// A widget that displays the picture taken by the user.
-class DisplayPictureScreen extends StatelessWidget {
-  final String imagePath;
-
-  const DisplayPictureScreen({super.key, required this.imagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Display the Picture')),
-      // The image is stored as a file on the device. Use the `Image.file`
-      // constructor with the given path to display the image.
-      body: Image.file(File(imagePath)),
     );
   }
 }
